@@ -13,6 +13,9 @@ reconstructs images and reports compression ratio and MSE.
 # How It Works
 
 Training – VectorQuantizer.generateCodebook() learns 256 centroids per component (R, G, B or Y, U, V) using 10 iterations of k‑means.
+
 Compression –  Each 2 × 2 block is replaced by an 8‑bit index into the corresponding codebook.
+
 Decompression –  Indices are mapped back to code‑vectors; YUV components are up‑sampled; RGB components are merged.
+
 Metrics –  Compression ratio and pixelwise MSE are logged for every test image.
